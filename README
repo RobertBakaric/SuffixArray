@@ -1,0 +1,82 @@
+SuffixArray version 1.0
+=======================
+
+FULL NAME:
+
+Suffix array computation tool 
+
+
+DESCRIPTION:
+
+Suffix array is a data structure used commonly for full text indices, 
+data compression algorithms and in various matching algorithms in 
+bioinformatics and computational biology. It is an array of indices 
+each corresponding to a starting position of a suffix in a given string. 
+This software is a C++ encapsulation of sais-light-2.4.1 library written 
+by Yuta Mori [1] implementing the induced sorting [2] based suffix 
+array construction algorithm. 
+
+
+SYNOPSIS:
+
+    #include<vector>
+    #include<SuffixArray.hpp>
+
+    string text("This is my text");
+  
+
+/* Make SuffixArray */
+
+    /* Construction */
+    SuffixArray<int|long|unsigned|double> SA(text);
+    /*  OR  */
+    SuffixArray<int|long|unsigned|double> SA;
+    SA.make(text);
+    
+/* Get Array */
+
+   vector<int|long|unsigned|double>Array = SA.GetSuffixArray();    // [15 4 7 10 0 12 1 2 5 8 3 6 14 11 13 9]
+
+
+
+CONSTRUCTION AND RUNTIME COMPLEXITY:
+
+For: 
+
+|S| - input string size
+
+    The algorithm runs in O(|S|) worst-case time
+
+
+
+ACKNOWLEDGMENTS:
+     
+     1.  Yuta Mori, 2010. https://sites.google.com/site/yuta256/sais
+
+     2.  Ge Nong, Sen Zhang and Wai Hong Chan, Two Efficient Algorithms 
+         for Linear Suffix Array Construction, 2008.
+
+
+AUTHOR:
+
+Robert Bakaric <rbakaric@irb.hr>, <bakaric@evolbio.mpg.de>
+
+COPYRIGHT AND LICENSE:
+
+ * Copyright 2015 Robert Bakaric
+ * 
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ * MA 02110-1301, USA.
+
